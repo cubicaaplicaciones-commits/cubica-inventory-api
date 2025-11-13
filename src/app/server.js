@@ -1,4 +1,3 @@
-// src/app/server.js
 import http from "http";
 import dotenv from "dotenv";
 import { createRouter } from "./router.js";
