@@ -8,7 +8,8 @@ import { registerItemRoutes } from "../modules/items/items.routes.js";
 import { registerWarehouseRoutes } from "../modules/warehouses/warehouses.routes.js";
 import { registerStockRoutes } from "../modules/stock/stock.routes.js";
 import { registerMovementRoutes } from "../modules/movements/movements.routes.js";
-import { registerReportRoutes } from "../modules/reports/reports.routes.js"; // <-- reports
+import { registerReportRoutes } from "../modules/reports/reports.routes.js";
+import { registerUserRoutes } from "../modules/users/user.routes.js";
 
 dotenv.config();
 
