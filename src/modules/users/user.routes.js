@@ -1,5 +1,5 @@
-import { requireRole } from "../middleware/auth.js";
-import { readJson } from "../utils/body.js";
+import { requireRole } from "../../middleware/auth.js";
+import { readJson } from "../../utils/body.js";
 import {
   listUsersSvc,
   getUserByIdSvc,
