@@ -1,5 +1,4 @@
-﻿// src/app/auth.js
-import jwt from "jsonwebtoken";
+﻿import jwt from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET || "change-this-secret";
 const AUTH_HEADER = "authorization";

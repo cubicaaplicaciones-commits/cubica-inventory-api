@@ -21,7 +21,7 @@ registerWarehouseRoutes(router);
 registerStockRoutes(router);
 registerMovementRoutes(router);
 registerReportRoutes(router); // <-- integración de reports
-
+registerUserRoutes(router)
 const PORT = process.env.PORT || 5000;
 
 const server = http.createServer((req, res) => {
