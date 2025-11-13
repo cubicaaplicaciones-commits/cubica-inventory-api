@@ -1,4 +1,4 @@
-﻿import { query } from "../../db/pool";
+﻿import { query } from "../../db/pool.js";
 
 export async function findUserByEmail(email) {
   const { rows } = await query("select * from users where email=$1", [email.toLowerCase().trim()]);

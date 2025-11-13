@@ -1,4 +1,4 @@
-﻿/*import { query } from "../db/pool";
+﻿import { query } from "../db/pool";
 
 export async function findUserByEmail(email) {
   const { rows } = await query("select * from users where email=$1", [email.toLowerCase().trim()]);
@@ -30,7 +30,7 @@ export async function getUserRoles(userId) {
     [userId]
   );
   return rows.map(r => r.name);
-}*/
+}
 
 
 
