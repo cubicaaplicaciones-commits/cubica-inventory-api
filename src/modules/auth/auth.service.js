@@ -1,7 +1,12 @@
 ﻿import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { z } from "zod";
-import { findUserByEmail, createUserRepo, addUserRole, getUserRoles } from "../../users/user.repo.js";
+import {
+  findUserByEmail,
+  createUserRepo,
+  addUserRole,
+  getUserRoles
+} from "../../users/user.repo.js";
 import { findRoleByName } from "../../roles/roles.repo.js";
 
 const JWT_SECRET = process.env.JWT_SECRET || "change-this-secret";
@@ -19,10 +24,13 @@ const loginSchema = z.object({
   password: z.string().min(6).max(100)
 });
 
+/* Payload del token: ahora incluye email y nombre */
 function toTokenPayload(user, roles) {
   return {
     sub: user.email,
     uid: user.id,
+    email: user.email,
+    name: user.full_name || user.fullName || user.name || null,
     roles: roles || []
   };
 }
@@ -67,9 +75,8 @@ export async function loginSvc(input) {
   if (!ok) throw new Error("Credenciales invalidas");
 
   const roles = await getUserRoles(user.id);
-  const token = jwt.sign(toTokenPayload(user, roles), JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+  const token = jwt.sign(toTokenPayload(user, roles), JWT_SECRET, {
+    expiresIn: JWT_EXPIRES_IN
+  });
   return { token };
 }
-
-
-
