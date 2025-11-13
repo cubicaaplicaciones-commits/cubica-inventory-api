@@ -1,6 +1,6 @@
 ﻿import { readJson } from "../../utils/body.js";
 import { registerSvc, loginSvc } from "./auth.service.js";
-import { requireRole } from "./auth.js"; // protege rutas por rol
+import { requireRole } from "../../middleware/auth.js"; // protege rutas por rol
 
 export function registerAuthRoutes(router) {
   // Solo ADMIN puede registrar usuarios
