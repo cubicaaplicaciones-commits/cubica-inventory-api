@@ -11,7 +11,7 @@ import {
   addUserRole,
   getUserRoles
 } from "./user.repo.js";
-import { findRoleByName } from "../roles/roles.repo.js";
+import { findRoleByName } from "../../roles/roles.repo.js";
 
 /* Esquema para crear usuario desde admin */
 const createUserSchema = z.object({
